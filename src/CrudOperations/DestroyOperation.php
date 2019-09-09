@@ -36,8 +36,8 @@ class DestroyOperation extends AbstractCrudOperation
      * Execute operation.
      *
      * @param CrudRequestInterface $request
-     * @param CrudResource $resource
-     * @param AbstractRepository $repository
+     * @param CrudResource         $resource
+     * @param AbstractRepository   $repository
      *
      * @return mixed
      */

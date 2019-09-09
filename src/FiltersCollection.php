@@ -2,6 +2,8 @@
 
 namespace ArgentCrusade\CrudKit;
 
+use Illuminate\Support\Arr;
+
 class FiltersCollection
 {
     /**
@@ -21,7 +23,7 @@ class FiltersCollection
      */
     public function register($requesterType, array $filters)
     {
-        foreach (array_wrap($requesterType) as $type) {
+        foreach (Arr::wrap($requesterType) as $type) {
             $this->filters[$type] = $filters;
         }
 

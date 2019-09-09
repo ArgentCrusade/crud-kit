@@ -23,8 +23,8 @@ abstract class AbstractCrudOperation
      * Execute operation.
      *
      * @param CrudRequestInterface $request
-     * @param CrudResource $resource
-     * @param AbstractRepository $repository
+     * @param CrudResource         $resource
+     * @param AbstractRepository   $repository
      *
      * @return mixed
      */
@@ -34,9 +34,9 @@ abstract class AbstractCrudOperation
      * Execute CRUD operation.
      *
      * @param CrudRequestInterface $request
-     * @param CrudResource $resource
-     * @param AbstractRepository $repository
-     * @param callable|null $callback
+     * @param CrudResource         $resource
+     * @param AbstractRepository   $repository
+     * @param callable|null        $callback
      *
      * @return mixed
      */

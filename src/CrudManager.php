@@ -12,6 +12,7 @@ use ArgentCrusade\Repository\AbstractRepository;
 use ArgentCrusade\Repository\Contracts\RepositoryOrderingInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class CrudManager
 {
@@ -176,7 +177,7 @@ class CrudManager
         // ordering that was registered to the current order column.
         // If true, this instance will take care of data ordering.
 
-        if (!is_null($ordering = array_get($repository->ordering(), $orderColumn))) {
+        if (!is_null($ordering = Arr::get($repository->ordering(), $orderColumn))) {
             /** @var RepositoryOrderingInterface $ordering */
             $ordering = is_string($ordering) ? app($ordering) : $ordering;
 

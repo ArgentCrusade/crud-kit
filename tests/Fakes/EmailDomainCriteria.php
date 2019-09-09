@@ -23,7 +23,7 @@ class EmailDomainCriteria implements CriteriaInterface
     }
 
     /**
-     * @param Builder             $model
+     * @param Builder $model
      *
      * @return mixed
      */
