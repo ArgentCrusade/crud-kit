@@ -3,6 +3,7 @@
 namespace ArgentCrusade\CrudKit\Requesters;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 class DatatableRequester extends ApiRequester
@@ -75,7 +76,7 @@ class DatatableRequester extends ApiRequester
     {
         return $this->columnName(
             $request,
-            array_get($this->orderParameter($request), 'column', '')
+            Arr::get($this->orderParameter($request), 'column', '')
         );
     }
 
@@ -89,7 +90,7 @@ class DatatableRequester extends ApiRequester
     public function orderDirection(Request $request)
     {
         $direction = Str::lower(
-            array_get($this->orderParameter($request), 'dir', '')
+            Arr::get($this->orderParameter($request), 'dir', '')
         );
 
         return $direction === 'desc' ? 'desc' : 'asc';
@@ -106,7 +107,7 @@ class DatatableRequester extends ApiRequester
      */
     protected function columnName(Request $request, $index, $default = null)
     {
-        return array_get(
+        return Arr::get(
             $request->input('columns'),
             $index.'.name',
             $default
@@ -122,7 +123,7 @@ class DatatableRequester extends ApiRequester
      */
     protected function orderParameter(Request $request)
     {
-        return array_first($request->input('order'));
+        return Arr::first($request->input('order'));
     }
 
     /**

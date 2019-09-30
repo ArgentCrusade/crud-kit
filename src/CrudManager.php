@@ -117,7 +117,7 @@ class CrudManager
                 continue;
             }
 
-            $relationships = array_merge($relationships, array_wrap($list[$include]));
+            $relationships = array_merge($relationships, Arr::wrap($list[$include]));
         }
 
         return array_unique($relationships);
