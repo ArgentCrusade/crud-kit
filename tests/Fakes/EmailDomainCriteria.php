@@ -2,14 +2,12 @@
 
 namespace ArgentCrusade\CrudKit\Tests\Fakes;
 
-use ArgentCrusade\Repository\Contracts\Criterias\CriteriaInterface;
+use ArgentCrusade\Repository\Contracts\Criterias\CacheableCriteriaInterface;
 use Illuminate\Database\Eloquent\Builder;
 
-class EmailDomainCriteria implements CriteriaInterface
+class EmailDomainCriteria implements CacheableCriteriaInterface
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $domain;
 
     /**
@@ -20,6 +18,16 @@ class EmailDomainCriteria implements CriteriaInterface
     public function __construct(string $domain)
     {
         $this->domain = $domain;
+    }
+
+    /**
+     * Get cache hash for the current criteria.
+     *
+     * @return array
+     */
+    public function getCacheHash(): string
+    {
+        return 'domain-'.$this->domain;
     }
 
     /**
