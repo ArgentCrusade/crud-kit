@@ -165,6 +165,25 @@ class CrudOperationsTest extends TestCase
         $this->assertSame(0, User::where('email', 'john@example.org')->count());
     }
 
+    public function testItShouldPassDeletedResourceToCallbacksAfterDeleteOperation()
+    {
+        /** @var User $user */
+        $user = factory(User::class)->create(['email' => 'john@example.org']);
+        $this->assertSame(1, User::where('email', 'john@example.org')->count());
+
+        $resource = null;
+        $this->assertNull($this->manager->resource()->getLastEvent());
+
+        $this->manager->destroy(new FakeRequest(), $user, function ($result) use (&$resource) {
+            $resource = $result;
+        });
+
+        $this->assertSame('destroyed', $this->manager->resource()->getLastEvent());
+        $this->assertInstanceOf(User::class, $resource);
+        $this->assertSame('john@example.org', $resource->email);
+        $this->assertSame(0, User::where('email', 'john@example.org')->count());
+    }
+
     public function testItShouldRevertAllChangesIfSomethingGoesWrongWhileDeletingResource()
     {
         /** @var User $user */

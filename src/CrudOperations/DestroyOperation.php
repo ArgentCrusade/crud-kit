@@ -43,6 +43,8 @@ class DestroyOperation extends AbstractCrudOperation
      */
     protected function run(CrudRequestInterface $request, CrudResource $resource, AbstractRepository $repository)
     {
-        return $repository->delete($this->model->getKey());
+        $repository->delete($this->model->getKey());
+
+        return $this->model;
     }
 }
