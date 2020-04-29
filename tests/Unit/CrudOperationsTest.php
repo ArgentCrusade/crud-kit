@@ -142,8 +142,7 @@ class CrudOperationsTest extends TestCase
         $user = factory(User::class)->create(['email' => 'john@example.org']);
         $this->assertSame(1, User::where('email', 'john@example.org')->count());
 
-        $result = $this->manager->destroy(new FakeRequest(), $user);
-        $this->assertTrue($result);
+        $this->manager->destroy(new FakeRequest(), $user);
         $this->assertSame(0, User::where('email', 'john@example.org')->count());
     }
 
