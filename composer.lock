@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "argentcrusade/repository",
-            "version": "3.2.0",
+            "version": "3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ArgentCrusade/repository.git",
-                "reference": "703a160e971eff9b5bc2ccbc8ddef99733859bbd"
+                "reference": "5680222ce389fbc4e650267a8e40d49ac924d7c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ArgentCrusade/repository/zipball/703a160e971eff9b5bc2ccbc8ddef99733859bbd",
-                "reference": "703a160e971eff9b5bc2ccbc8ddef99733859bbd",
+                "url": "https://api.github.com/repos/ArgentCrusade/repository/zipball/5680222ce389fbc4e650267a8e40d49ac924d7c6",
+                "reference": "5680222ce389fbc4e650267a8e40d49ac924d7c6",
                 "shasum": ""
             },
             "require": {
@@ -54,7 +54,7 @@
                 }
             ],
             "description": "Repository package.",
-            "time": "2020-10-07T09:21:03+00:00"
+            "time": "2020-10-19T16:00:54+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -4498,6 +4498,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {
