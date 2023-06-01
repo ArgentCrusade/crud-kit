@@ -27,6 +27,7 @@ class CrudListTest extends TestCase
     /**
      * @param string $orderBy
      * @param array  $orderMap
+     *
      * @dataProvider orderingDataProvider
      */
     public function testItShouldApplyOrdering(string $orderBy, array $orderMap)
@@ -50,6 +51,7 @@ class CrudListTest extends TestCase
      * @param array $emails
      * @param array $query
      * @param int   $expected
+     *
      * @dataProvider filtersDataProvider
      */
     public function testItShouldApplyFilters(array $emails, array $query, int $expected)
@@ -91,7 +93,7 @@ class CrudListTest extends TestCase
         $this->assertSame(1, $items[1]->projects()->count());
     }
 
-    public function orderingDataProvider()
+    public static function orderingDataProvider()
     {
         return [
             [
@@ -105,7 +107,7 @@ class CrudListTest extends TestCase
         ];
     }
 
-    public function filtersDataProvider()
+    public static function filtersDataProvider()
     {
         return [
             [
