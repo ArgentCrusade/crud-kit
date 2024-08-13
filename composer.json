@@ -12,8 +12,8 @@
     "require": {
         "php": "^8.2",
         "spatie/laravel-fractal": "^6.0",
-        "argentcrusade/repository": "^4.0",
-        "illuminate/support": "^10.0"
+        "argentcrusade/repository": "^5.0",
+        "illuminate/support": "^10.0|^11.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
